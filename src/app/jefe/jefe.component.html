@@ -1,0 +1,39 @@
+<div>
+    <form [formGroup]="jefeForm" name="jefeForm">   
+        <h1>Ingrese los datos del jefe:</h1>
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <textarea matInput placeholder="Ejemplo: Carlos" type="text" formControlName="nombre"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Apellido</mat-label>
+            <textarea matInput placeholder="Ejemplo: Fernandez" type="text" formControlName="apellido"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Sueldo</mat-label>
+            <textarea matInput placeholder="Ejemplo: 95000" type="text" formControlName="sueldo"></textarea>
+        </mat-form-field>
+
+        <!-- <input type="text" formControlName="nombre">
+        <input type="text" formControlName="apellido">
+        <input type="text" formControlName="sueldo"> -->
+
+        <!-- Control de Datos
+        <h2>Valores Ingresados:</h2>
+        Nombre: {{jefeForm.value.nombre | json}}
+        Apellido: {{jefeForm.value.apellido | json}}
+        Sueldo: {{jefeForm.value.sueldo | json}} -->
+
+    </form>
+</div>
+
+<button mat-raised-button (click) = "enviarDatos()">Enviar datos al empleado</button>
+
+<div *ngIf="jefe"> <!--igual a decir if jefe != null-->
+    <app-empleado [vieneDeJefe]="jefe" (eventoBoton)="onRecibe($event)"></app-empleado>
+    <br>
+    <h3 *ngIf="mostrar">Sueldo del jefe cambiado por el empleado: {{valorBoton}}</h3>
+</div>
+

@@ -1,0 +1,19 @@
+<div>
+    <br>
+    <h2>Datos del jefe recibidos por el empleado:</h2>
+    <mat-list>
+        <mat-list-item>Nombre: {{vieneDeJefe.nombre}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item> Apellido: {{vieneDeJefe.apellido}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Sueldo: {{vieneDeJefe.sueldo}}</mat-list-item>
+    </mat-list>
+
+    <mat-form-field>
+        <mat-label>Cambiar Sueldo</mat-label>
+        <textarea matInput placeholder="Ejemplo: 600" type="text" [(ngModel)]="nuevoSueldo"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="devolver()">Devolver el sueldo</button>
+
+</div>
